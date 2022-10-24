@@ -1,0 +1,12 @@
+.rotate_icon_descending {
+  cursor: pointer;
+  transition: transform 0.3s;
+  transform-origin: center center;
+  transform: rotate(-180deg);
+}
+.rotate_icon_ascending {
+  cursor: pointer;
+  transition: transform 0.3s;
+  transform-origin: center center;
+  transform: rotate(0deg);
+}

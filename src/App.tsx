@@ -5,7 +5,7 @@ import { store } from './redux/store';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Provider store={store}>
         <Content />
       </Provider>

@@ -1,13 +1,15 @@
 {
   "files": {
     "main.css": "/PizzaShop/static/css/main.f79bf6f5.css",
-    "main.js": "/PizzaShop/static/js/main.2ded29d3.js",
+    "main.js": "/PizzaShop/static/js/main.f31dfe7e.js",
+    "static/media/empty-cart.png": "/PizzaShop/static/media/empty-cart.db905d1f4b063162f25b.png",
+    "static/media/pizza-logo.svg": "/PizzaShop/static/media/pizza-logo.56ac87032d8f6fdf863326acd06c0d97.svg",
     "index.html": "/PizzaShop/index.html",
     "main.f79bf6f5.css.map": "/PizzaShop/static/css/main.f79bf6f5.css.map",
-    "main.2ded29d3.js.map": "/PizzaShop/static/js/main.2ded29d3.js.map"
+    "main.f31dfe7e.js.map": "/PizzaShop/static/js/main.f31dfe7e.js.map"
   },
   "entrypoints": [
     "static/css/main.f79bf6f5.css",
-    "static/js/main.2ded29d3.js"
+    "static/js/main.f31dfe7e.js"
   ]
 }

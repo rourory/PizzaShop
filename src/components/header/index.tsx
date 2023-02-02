@@ -1,11 +1,22 @@
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Search from '../search';
 import { cartSelector } from '../../redux/slices/cartSlice';
 
-const Header: React.FC = () => {
-  const { totalPrice, totalCount } = useSelector(cartSelector);
+const Header: React.FC = React.memo(() => {
+  const { items, totalPrice, totalCount } = useSelector(cartSelector);
   const location = useLocation();
+
+  const isMounted = React.useRef(false);
+
+  React.useEffect(() => {
+    if (isMounted.current) {
+      console.log('Cart was mounted. List of items :', items);
+      localStorage.setItem('cart', JSON.stringify(items));
+    }
+    isMounted.current = true;
+  }, [items]);
 
   return (
     <div className="header">
@@ -62,6 +73,6 @@ const Header: React.FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Header;

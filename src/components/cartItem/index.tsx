@@ -36,7 +36,8 @@ const CartItem: React.FC<CartItemType> = ({
         </p>
       </div>
       <div className="cart__item-count">
-        <div
+        <button
+          disabled={count === 1}
           onClick={() =>
             dispatch(decrementItem({ id, title, price, imageUrl, size, pastryType, count }))
           }
@@ -56,9 +57,9 @@ const CartItem: React.FC<CartItemType> = ({
               fill="#EB5A1E"
             />
           </svg>
-        </div>
+        </button>
         <b>{count}</b>
-        <div
+        <button
           onClick={() =>
             dispatch(incrementItem({ id, title, price, imageUrl, size, pastryType, count }))
           }
@@ -78,7 +79,7 @@ const CartItem: React.FC<CartItemType> = ({
               fill="#EB5A1E"
             />
           </svg>
-        </div>
+        </button>
       </div>
       <div className="cart__item-price">
         <b>{price * count} ₽</b>

@@ -43,7 +43,6 @@ const PizzaBlock: React.FC<PizzaBlockType> = ({
   items.forEach((item) => {
     if (item.id === id) {
       thisItems.push(item);
-      console.log(thisItems);
       totalCount = totalCount + item.count;
     }
   });

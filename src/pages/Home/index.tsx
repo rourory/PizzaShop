@@ -17,12 +17,17 @@ import { searchValueSelector } from '../../redux/slices/searchSlice';
 import { fetchPizzas, pizzaSelector, FetchingStatus } from '../../redux/slices/pizzaSlice';
 import { AppDispatch } from '../../redux/store';
 import QueryString from 'qs';
+import { types } from 'sass';
 
 const Home = () => {
   //VARIABLES
   const navigate = useNavigate();
   const isSearch = React.useRef(false);
   const isMounted = React.useRef(false);
+  const categories = React.useMemo(
+    () => ['Все', 'Мясные', 'Вегетерианская', 'Гриль', 'Острые', 'Закрытые'],
+    [],
+  );
 
   const fetchData = (query: string) => {
     dispatch(fetchPizzas(query));
@@ -69,16 +74,18 @@ const Home = () => {
     isSearch.current = false;
   }, [categoryIndex, selectedSortType, ascendingSort, searchValue, page]);
 
+  const onChangeCategory = React.useCallback((type: number) => {
+    dispatch(setCategoryIndex(type));
+  }, []);
+
   //RENDER_METHOD
   return (
     <div className="container">
       <div className="content__top">
         <Categories
-          categories={['Все', 'Мясные', 'Вегетерианская', 'Гриль', 'Острые', 'Закрытые']}
+          categories={categories}
           categoryInd={categoryIndex}
-          onChangeCategory={(type) => {
-            dispatch(setCategoryIndex(type));
-          }}
+          onChangeCategory={onChangeCategory}
         />
         <Sort />
       </div>

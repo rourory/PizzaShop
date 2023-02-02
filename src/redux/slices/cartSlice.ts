@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { getCartFormLocalStorage } from '../redux-utils.ts/cartUtil';
 import { RootState } from '../store';
 
-type CartSliceItem = {
+export type CartSliceItem = {
   count: number;
   id: number;
   imageUrl: string;
@@ -11,17 +12,13 @@ type CartSliceItem = {
   title: string;
 };
 
-interface CartSliceState {
+export interface CartSliceState {
   totalPrice: number;
   totalCount: number;
   items: CartSliceItem[];
 }
 
-const initialState: CartSliceState = {
-  totalPrice: 0,
-  totalCount: 0,
-  items: [],
-};
+const initialState: CartSliceState = getCartFormLocalStorage();
 
 /**
  * Ищет в массиве items элемент по свойствам id, size и pastryType

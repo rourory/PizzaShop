@@ -7,6 +7,7 @@ import {
   selectedSortTypeFilterSelector,
   ascendingSortFilterSelector,
 } from '../../redux/slices/filterSlice';
+import useWhyDidYouUpdate from 'ahooks/lib/useWhyDidYouUpdate';
 
 export const sortTypes = [
   { name: 'популярности', title: 'rating' },
@@ -14,7 +15,7 @@ export const sortTypes = [
   { name: 'названию', title: 'title' },
 ];
 
-export default function Sort() {
+const Sort: React.FC = React.memo(() => {
   //VARIABLES_FROM_REDUX
   const dispatch = useDispatch();
   const sortRef = React.useRef();
@@ -82,4 +83,6 @@ export default function Sort() {
       )}
     </div>
   );
-}
+});
+
+export default Sort;

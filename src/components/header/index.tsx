@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Search from '../search';
 import { cartSelector } from '../../redux/slices/cartSlice';
+import logo from './pizza-logo.svg'
 
 const Header: React.FC = React.memo(() => {
    const { items, totalPrice, totalCount } = useSelector(cartSelector);
@@ -23,7 +24,7 @@ const Header: React.FC = React.memo(() => {
          <div className="container">
             <Link to="/">
                <div className="header__logo">
-                  <img width="38" src="/img/pizza-logo.svg" alt="Pizza logo" />
+                  <img width="38" src={logo} alt="Pizza logo" />
                   <div>
                      <h1>React Pizza</h1>
                      <p>самая вкусная пицца во вселенной</p>

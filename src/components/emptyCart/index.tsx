@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import image from './empty-cart.png'
 
 export const EmptyCart: React.FC = () => {
    return (
@@ -15,7 +16,7 @@ export const EmptyCart: React.FC = () => {
                      <br />
                      Для того, чтобы заказать пиццу, перейди на главную страницу.
                   </p>
-                  <img src="/img/empty-cart.png" alt="Empty cart" />
+                  <img src={image} alt="Empty cart" />
                   <Link to="/" className="button button--outline button--add go-back-btn">
                      <svg
                         width="8"
